@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GatorsCupid</string>
+    <string name="email_alt_text">SFSU Email</string>
+    <string name="password_alt_text">Password</string>
+    <string name="signIn_button">SignIn</string>
+    <string name="signUp_button">SignUp</string>
+</resources>

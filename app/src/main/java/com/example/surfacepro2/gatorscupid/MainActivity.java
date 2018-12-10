@@ -327,9 +327,9 @@ public class MainActivity extends AppCompatActivity  {
                             });
                             dlg.show();*/
                            // clear the contents on error
-                           emailAddress.setText("");
+                           //emailAddress.setText("");
                            password.setText("");
-                           showToast(getString(R.string.error_invalid_credentials));
+                           //showToast(getString(R.string.error_invalid_credentials));
                         }
                     }
                 }

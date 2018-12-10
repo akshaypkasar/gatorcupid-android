@@ -24,7 +24,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.07999998" />
+        app:layout_constraintVertical_bias="0.16000003" />
 
 
     <Spinner
@@ -34,6 +34,7 @@
         android:ems="10"
         android:hint="@string/gender_spinner_hint"
         android:entries="@array/gender_spinner"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -42,20 +43,21 @@
 
 
     <Button
-        android:id="@+id/genderContinueButton"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/secondaryColor"
-        android:text="@string/continue_button"
-        android:textColor="@color/primaryColor"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/genderSpinner"
-        app:layout_constraintVertical_bias="0.75" />
+    android:id="@+id/genderContinueButton"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="8dp"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@color/secondaryColor"
+    android:text="@string/continue_button"
+    android:textColor="@color/primaryColor"
+    android:onClick="onContinueClick"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/genderSpinner"
+    app:layout_constraintVertical_bias="0.75" />
 
 </android.support.constraint.ConstraintLayout>

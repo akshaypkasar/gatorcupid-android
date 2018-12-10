@@ -7,18 +7,35 @@ import com.example.surfacepro2.gatorscupid.constant.State;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class User implements Serializable {
 
+    private Long id;
     private String name;
     private String email;
     private Integer gender;
-    private Integer birthYear;
+    private String birthYear;
     private Integer interestedIn;
     private Integer intention;
     private String about;
     private String major;
     private Integer isProfileCreated;
+    private List<String> profilePics;
+
+    public User(){
+        this.profilePics = new ArrayList<>();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -44,11 +61,11 @@ public class User implements Serializable {
         this.gender = gender;
     }
 
-    public Integer getBirthYear() {
+    public String getBirthYear() {
         return birthYear;
     }
 
-    public void setBirthYear(Integer birthYear) {
+    public void setBirthYear(String birthYear) {
         this.birthYear = birthYear;
     }
 
@@ -90,6 +107,9 @@ public class User implements Serializable {
 
     public void setIsProfileCreated(Integer isProfileCreated) {
         this.isProfileCreated = isProfileCreated;
+    }
+    public List<String> getProfilePics() {
+        return profilePics;
     }
 
     @Override

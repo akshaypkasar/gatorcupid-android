@@ -28,7 +28,7 @@
 
     <!-- ProfileAge Activity Resources-->
     <string name="age_title_text">How old are you?</string>
-    <string name="age_hint">MM/DD/YYYY</string>
+    <string name="age_hint">YYYY-MM-DD</string>
 
     <!-- ProfileGender Activity Resources-->
     <string name="gender_title_text">I am a</string>
@@ -40,13 +40,13 @@
     </string-array>
 
     <!-- Profile InterestedIn Activity Resources -->
-    <string name="interestedin_title_text">I am looking for</string>
+    <string name="interestedin_title_text">I am interested in dating</string>
     <string name="interestedin_spinner_hint">Select your Gender</string>
     <string-array name="interestedin_spinner">
-        <item>Man</item>
-        <item>Woman</item>
+        <item>Men</item>
+        <item>Women</item>
         <item>Both</item>
-        <item>Other</item>
+        <item>Others</item>
     </string-array>
 
     <!-- Profile Pic Activity Rescources -->

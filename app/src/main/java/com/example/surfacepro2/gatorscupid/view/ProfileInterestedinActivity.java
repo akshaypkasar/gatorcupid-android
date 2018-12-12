@@ -23,7 +23,7 @@ public class ProfileInterestedinActivity extends AppCompatActivity {
         Log.i("GatorCupid","ProfileInterestedinActivity>>onContinueClick: ContinueButton Clicked!");
 
         interestedInSpinner = findViewById(R.id.interestedinSpinner);
-        Integer interestedIn = interestedInSpinner.getSelectedItemPosition();
+        Integer interestedIn = interestedInSpinner.getSelectedItemPosition() + 1;
 
         //set values to the user object received from MainActivity
         User user = (User)getIntent().getSerializableExtra("user");

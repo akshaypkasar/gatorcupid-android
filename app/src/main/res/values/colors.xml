@@ -9,6 +9,6 @@
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ffca28</color>
     <color name="colorAccent">#ffca28</color>
-    <color name="colorPrimaryDark">#aabb22</color>
-    <color name="colorPrimary">#aaff00</color>
+    <color name="colorPrimaryDark">#ffca28</color>
+    <color name="colorPrimary">#9162e4</color>
 </resources>

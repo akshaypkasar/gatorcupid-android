@@ -25,7 +25,7 @@ import com.example.surfacepro2.gatorscupid.model.Response;
 import com.example.surfacepro2.gatorscupid.model.User;
 import com.example.surfacepro2.gatorscupid.util.VolleyUtil;
 import com.example.surfacepro2.gatorscupid.view.ProfileNameActivity;
-import com.example.surfacepro2.gatorscupid.view.SwipeActivity;
+import com.example.surfacepro2.gatorscupid.view.BrowseProfilesActivity;
 import com.google.gson.Gson;
 
 import org.json.JSONException;
@@ -276,7 +276,7 @@ public class MainActivity extends AppCompatActivity  {
                             intent.putExtra("user",user);
                             startActivityForResult(intent, 0);
                         }else if (user.getIsProfileCreated() == State.TRUE.getValue()) {
-                            Intent intent = new Intent(getApplicationContext(), SwipeActivity.class);
+                            Intent intent = new Intent(getApplicationContext(), BrowseProfilesActivity.class);
                             //passing user object to next activity
                             intent.putExtra("user",user);
                             startActivityForResult(intent, 0);

@@ -54,6 +54,10 @@
     <string name="doneButton">Done</string>
     <string name="title_activity_settings">Settings</string>
 
+    <!-- Browse Profile Activity Resources -->
+    <string name="swipe_like">👍</string>
+    <string name="swipe_unlike">👎</string>
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->

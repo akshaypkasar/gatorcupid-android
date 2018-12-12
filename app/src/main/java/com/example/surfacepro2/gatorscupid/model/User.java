@@ -1,14 +1,8 @@
 package com.example.surfacepro2.gatorscupid.model;
 
-import com.example.surfacepro2.gatorscupid.constant.Gender;
-import com.example.surfacepro2.gatorscupid.constant.Intention;
-import com.example.surfacepro2.gatorscupid.constant.InterestedIn;
-import com.example.surfacepro2.gatorscupid.constant.State;
 import com.google.gson.Gson;
-
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 public class User implements Serializable {
@@ -23,11 +17,9 @@ public class User implements Serializable {
     private String about;
     private String major;
     private Integer isProfileCreated;
-    private List<String> profilePics;
-
-    public User(){
-        this.profilePics = new ArrayList<>();
-    }
+    private String profilePic;
+    private Integer age;
+    private Integer profilePicAction;
 
     public Long getId() {
         return id;
@@ -105,11 +97,22 @@ public class User implements Serializable {
         return isProfileCreated;
     }
 
-    public void setIsProfileCreated(Integer isProfileCreated) {
-        this.isProfileCreated = isProfileCreated;
+    public void setIsProfileCreated(Integer isProfileCreated) { this.isProfileCreated = isProfileCreated; }
+
+    public String getProfilePic() { return profilePic; }
+
+    public void setProfilePic(String profilePic) { this.profilePic = profilePic; }
+
+    public Integer getAge() { return age; }
+
+    public void setAge(Integer age) { this.age = age; }
+
+    public Integer getProfilePicAction() {
+        return profilePicAction;
     }
-    public List<String> getProfilePics() {
-        return profilePics;
+
+    public void setProfilePicAction(Integer profilePicAction) {
+        this.profilePicAction = profilePicAction;
     }
 
     @Override
@@ -117,6 +120,4 @@ public class User implements Serializable {
         Gson gson = new Gson();
         return gson.toJson(this);
     }
-
-
 }

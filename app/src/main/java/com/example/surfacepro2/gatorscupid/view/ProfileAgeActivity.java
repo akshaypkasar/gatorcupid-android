@@ -56,7 +56,7 @@ public class ProfileAgeActivity extends AppCompatActivity {
     }
 
     private void updateLabel() {
-        String myFormat = "yyyy/MM/dd"; //In which you need put here
+        String myFormat = "yyyy-MM-dd"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
         ageText.setText(sdf.format(calendar.getTime()));
@@ -68,6 +68,7 @@ public class ProfileAgeActivity extends AppCompatActivity {
         //set values to the user object received from MainActivity
         User user = (User) getIntent().getSerializableExtra("user");
         user.setBirthYear(ageText.getText().toString());
+        Log.i("GatorCupid", "ProfileAgeActivity>>onContinueClick: Date Selected: "+ageText.getText().toString());
 
         //Call next screen by ProfileGender Activity
         Intent intent = new Intent(getApplicationContext(), ProfileInterestedinActivity.class);

@@ -47,7 +47,10 @@
             android:name=".view.ProfilePicActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:windowSoftInputMode="adjustResize" />
-        <activity android:name=".view.SwipeActivity"></activity>
+        <activity
+            android:name=".view.BrowseProfilesActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>

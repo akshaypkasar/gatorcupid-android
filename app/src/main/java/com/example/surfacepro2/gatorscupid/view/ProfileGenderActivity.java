@@ -25,7 +25,7 @@ public class ProfileGenderActivity extends AppCompatActivity {
         Log.i("GatorCupid","ProfileGenderActivity>>onContinueClick: ContinueButton Clicked!");
 
         genderSpinner = findViewById(R.id.genderSpinner);
-        Integer genderSelected = genderSpinner.getSelectedItemPosition();
+        Integer genderSelected = genderSpinner.getSelectedItemPosition() + 1;
 
         //set values to the user object received from MainActivity
         User user = (User)getIntent().getSerializableExtra("user");

@@ -105,25 +105,6 @@ public class CardUtil {
         }
     }
 
-    private static String loadJSONFromAsset(Context context, String jsonFileName) {
-        String json = null;
-        InputStream is = null;
-        try {
-            AssetManager manager = context.getAssets();
-            Log.d(TAG, "path " + jsonFileName);
-            is = manager.open(jsonFileName);
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
-    }
-
     public static Point getDisplaySize(WindowManager windowManager) {
         try {
             if (Build.VERSION.SDK_INT > 16) {

@@ -77,13 +77,11 @@ public class ProfilePicActivity extends AppCompatActivity {
                 Bitmap lastBitmap = null;
                 lastBitmap = bitmap;
                 //encoding image to string
-                profilePicInString = getStringFromImage(lastBitmap);
-                Bitmap bmpImg = getBitMapFromString(profilePicInString);
+                profilePicInString = CommonUtil.getStringFromImage(lastBitmap);
+                Bitmap bmpImg = CommonUtil.getBitMapFromString(profilePicInString);
                 imageView.setImageBitmap(bmpImg);
                 profilePicSelected = true;
                 imageView.setBackground(null);
-                //passing the image to volley
-//                sendImage(image);
 
             } catch (IOException e) {
                 e.printStackTrace();
@@ -91,24 +89,7 @@ public class ProfilePicActivity extends AppCompatActivity {
         }
     }
 
-    public String getStringFromImage(Bitmap bmp) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 10, baos);
-        byte[] imageBytes = baos.toByteArray();
-        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
-        return encodedImage;
-    }
 
-    public Bitmap getBitMapFromString(String encodedString){
-        try{
-            byte [] encodeByte=Base64.decode(encodedString,Base64.DEFAULT);
-            Bitmap bitmap=BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
-            return bitmap;
-        }catch(Exception e){
-            e.getMessage();
-            return null;
-        }
-    }
 
     public void onDoneButtonClick(View view) throws JSONException {
 
@@ -121,6 +102,7 @@ public class ProfilePicActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.progressBaronProfilePic);
         progressBar.setVisibility(View.VISIBLE);
+
         //set values to the user object received from MainActivity
         User user = (User)getIntent().getSerializableExtra("user");
         user.setProfilePic(profilePicInString);
@@ -128,43 +110,6 @@ public class ProfilePicActivity extends AppCompatActivity {
         //make update user request
         VolleyUtil.getInstance(getApplicationContext()).getRequestQueue().add(updateUserProfile(user));
     }
-/*
-    private void sendImage( final String image) {
-        final StringRequest stringRequest = new StringRequest(Request.Method.POST, "URL",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        Log.d("uploade",response);
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
-                    }
-                },  new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //Toast.makeText(Edit_Profile.this, "No internet connection", Toast.LENGTH_LONG).show();
-
-                    }
-                }) {
-                    @Override
-                    protected Map<String, String> getParams() throws AuthFailureError {
-
-                        Map<String, String> params = new Hashtable<String, String>();
-
-                        params.put("image", image);
-                        return params;
-                    }
-                };
-
-        int socketTimeout = 30000;
-        RetryPolicy policy = new DefaultRetryPolicy(socketTimeout, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
-        stringRequest.setRetryPolicy(policy);
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
-    }*/
 
     private JsonObjectRequest updateUserProfile(final User user) throws JSONException {
 
@@ -219,7 +164,5 @@ public class ProfilePicActivity extends AppCompatActivity {
                     }
                 };
                 return postRequest;
-
-
     }
 }

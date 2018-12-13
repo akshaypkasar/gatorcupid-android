@@ -1,6 +1,7 @@
 package com.example.surfacepro2.gatorscupid.model;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.util.Log;
 import android.widget.FrameLayout;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.surfacepro2.gatorscupid.R;
 import com.example.surfacepro2.gatorscupid.util.CardUtil;
+import com.example.surfacepro2.gatorscupid.util.CommonUtil;
 import com.mindorks.placeholderview.SwipeDirection;
 import com.mindorks.placeholderview.annotations.Click;
 import com.mindorks.placeholderview.annotations.Layout;
@@ -21,6 +23,8 @@ import com.mindorks.placeholderview.annotations.swipe.SwipeOutDirectional;
 import com.mindorks.placeholderview.annotations.swipe.SwipeTouch;
 import com.mindorks.placeholderview.annotations.swipe.SwipeView;
 import com.mindorks.placeholderview.annotations.swipe.SwipingDirection;
+
+import java.io.ByteArrayOutputStream;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
@@ -56,10 +60,17 @@ public class Card {
 
     @Resolve
     public void onResolved() {
-        Glide.with(mContext).load(userProfile.getProfilePic())
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        Bitmap profile = CommonUtil.getBitMapFromString(userProfile.getProfilePic());
+        profile.compress(Bitmap.CompressFormat.PNG, 50, stream);
+
+        /*Glide.with(mContext).load(stream.toByteArray())
                 .bitmapTransform(new RoundedCornersTransformation(mContext, CardUtil.dpToPx(7), 0,
                         RoundedCornersTransformation.CornerType.TOP))
-                .into(profileImageView);
+                .into(profileImageView);*/
+
+
         nameAgeTxt.setText(userProfile.getName() + ", " + userProfile.getAge());
         departmentNameText.setText(userProfile.getMajor());
         mSwipeView.setAlpha(1);
